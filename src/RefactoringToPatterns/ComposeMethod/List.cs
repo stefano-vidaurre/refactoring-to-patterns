@@ -18,15 +18,16 @@ public class List
         _elements = new Object[_size];
     }
 
-    public void Add(Object element) {
-        if(!_readOnly) {
-            if(IsNeededIncreaseList())
-            {
-                IncreaseList();
-            }
-
-            _elements[_size++] = element;
+    public void Add(Object element)
+    {
+        if (_readOnly) return;
+        
+        if(IsNeededIncreaseList())
+        {
+            IncreaseList();
         }
+
+        _elements[_size++] = element;
     }
 
     private bool IsNeededIncreaseList()
