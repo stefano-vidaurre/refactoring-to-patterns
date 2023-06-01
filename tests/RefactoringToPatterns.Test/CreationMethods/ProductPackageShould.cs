@@ -7,7 +7,7 @@ public class ProductPackageShould
     [Fact]
     public void CreateAProductPackageWithOnlyInternet()
     {
-        var productPackage = new ProductPackage("100MB");
+        var productPackage = ProductPackage.CreateWithInternet("100MB");
 
         Assert.True(productPackage.HasInternet());
         Assert.False(productPackage.HasVOIP());

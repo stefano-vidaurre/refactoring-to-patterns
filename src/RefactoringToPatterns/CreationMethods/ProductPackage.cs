@@ -22,12 +22,19 @@ public class ProductPackage
         _internetLabel = internetLabel;
         _tvChannels = tvChannels;
     }
+    
 
     public ProductPackage(string internetLabel, int? telephoneNumber, string[]? tvChannels)
     {
         _internetLabel = internetLabel;
         _telephoneNumber = telephoneNumber;
         _tvChannels = tvChannels;
+    }
+    
+    public static ProductPackage CreateWithInternet(string internet)
+    {
+        var productPackage = new ProductPackage(internet, null, null);
+        return productPackage;
     }
     
     public static ProductPackage CreateWithInternetAndVoip(string internet, int telephone)
