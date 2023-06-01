@@ -20,15 +20,18 @@ public class List
 
     public void Add(Object element) {
         if(!_readOnly) {
-            int newSize = _size + 1;
-
-            if(newSize > _elements.Length)
+            if(IsNeededIncreaseList())
             {
                 IncreaseList();
             }
 
             _elements[_size++] = element;
         }
+    }
+
+    private bool IsNeededIncreaseList()
+    {
+        return _size + 1 > _elements.Length;
     }
 
     private void IncreaseList()
