@@ -30,6 +30,12 @@ public class ProductPackage
         _tvChannels = tvChannels;
     }
     
+    public static ProductPackage CreateWithInternetAndVoip(string internet, int telephone)
+    {
+        var productPackage = new ProductPackage(internet, telephone, null);
+        return productPackage;
+    }
+    
     public static ProductPackage CreateWithInternetAndTv(string internet, string[] tvChannels)
     {
         var productPackage = new ProductPackage(internet, null, tvChannels);
