@@ -29,6 +29,12 @@ public class ProductPackage
         _telephoneNumber = telephoneNumber;
         _tvChannels = tvChannels;
     }
+    
+    public static ProductPackage CreateWithInternetVoipAndTv(string internet, int telephone, string[] tvChannels)
+    {
+        var productPackage = new ProductPackage(internet, telephone, tvChannels);
+        return productPackage;
+    }
 
     public bool HasInternet()
     {
