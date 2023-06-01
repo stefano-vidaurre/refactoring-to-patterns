@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringToPatterns", "src\RefactoringToPatterns\RefactoringToPatterns.csproj", "{254FEBA0-0538-464F-8FA1-E965F276ED47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringToPatterns.Test", "tests\RefactoringToPatterns.Test\RefactoringToPatterns.Test.csproj", "{0E41251E-82A4-45B5-818C-B4734E3FC372}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{254FEBA0-0538-464F-8FA1-E965F276ED47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254FEBA0-0538-464F-8FA1-E965F276ED47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254FEBA0-0538-464F-8FA1-E965F276ED47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254FEBA0-0538-464F-8FA1-E965F276ED47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E41251E-82A4-45B5-818C-B4734E3FC372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E41251E-82A4-45B5-818C-B4734E3FC372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E41251E-82A4-45B5-818C-B4734E3FC372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E41251E-82A4-45B5-818C-B4734E3FC372}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
