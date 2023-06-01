@@ -22,17 +22,23 @@ public class List
         if(!_readOnly) {
             int newSize = _size + 1;
 
-            if(newSize > _elements.Length) {
-                Object[] newElements = new Object[_elements.Length + 10];
-
-                for (int i = 0; i < _size; i++)
-                    newElements[i] = _elements[i];
-
-                _elements = newElements;
+            if(newSize > _elements.Length)
+            {
+                IncreaseList();
             }
 
             _elements[_size++] = element;
         }
+    }
+
+    private void IncreaseList()
+    {
+        Object[] newElements = new Object[_elements.Length + 10];
+
+        for (int i = 0; i < _size; i++)
+            newElements[i] = _elements[i];
+
+        _elements = newElements;
     }
 
     public object[] Elements()
