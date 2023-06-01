@@ -1,6 +1,6 @@
 ﻿namespace RefactoringToPatterns.CommandPattern;
 
-public class MoveEast : ICommand
+public class MoveEast : IDirection
 {
     private MarsRover _marsRover;
 

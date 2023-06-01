@@ -10,10 +10,8 @@ public class MarsRover
     private readonly string _availableDirections = "NESW";
     public readonly string[] _obstacles;
     public bool _obstacleFound;
-    private readonly MoveEast _moveEast;
-    private readonly MoveSouth _moveSouth;
-    private readonly MoveWest _moveWest;
-    private readonly MoveNorth _moveNorth;
+
+    private readonly IDictionary<char, IDirection> _directions;
 
     public MarsRover(int x, int y, char direction, string[] obstacles)
     {
@@ -21,10 +19,13 @@ public class MarsRover
         _y = y;
         _direction = direction;
         _obstacles = obstacles;
-        _moveEast = new MoveEast(this);
-        _moveSouth = new MoveSouth(this);
-        _moveWest = new MoveWest(this);
-        _moveNorth = new MoveNorth(this);
+        _directions = new Dictionary<char, IDirection>()
+        {
+            { 'N', new MoveNorth(this) },
+            { 'S', new MoveSouth(this) },
+            { 'W', new MoveWest(this) },
+            { 'E', new MoveEast(this) },
+        };
     }
         
     public string GetState()
@@ -38,21 +39,8 @@ public class MarsRover
         {
             if (command == 'M')
             {
-                switch (_direction)
-                {
-                    case 'E':
-                        _moveEast.Execute();
-                        break;
-                    case 'S':
-                        _moveSouth.Execute();
-                        break;
-                    case 'W':
-                        _moveWest.Execute();
-                        break;
-                    case 'N':
-                        _moveNorth.Execute();
-                        break;
-                }
+                IDirection direction = _directions[_direction];
+                direction.Execute();
             }
             else if(command == 'L')
             {
